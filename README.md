@@ -22,16 +22,16 @@ Forked by Sean Scheetz
 
 The simplest way to install the module is pip
 
-<pre>
+```
 $ pip install etsy2
-</pre>
+```
 
 To install from source, extract the tarball and use the following commands.
 
-<pre>
+```
 $ python setup.py build
 $ sudo python setup.py install
-</pre>
+```
 
 ## Overview
 
@@ -56,6 +56,7 @@ etsy.findAllFeaturedListings()
 For endpoints that do require OAuth you must pass an `EtsyOAuthClient` to the `Etsy` constructor.
 
 ```python
+from etsy2 import EtstOAuthClient, Etsy
 etsy_oauth = EtsyOAuthClient(client_key=api_key,
                             client_secret=shared_secret,
                             resource_owner_key=oauth_token,
@@ -64,6 +65,7 @@ etsy = Etsy(etsy_oauth_client=etsy_oauth)
 ```
 
 The `EtsyOAuthClient` requires a client_key, client_secret, resource_owner_key, and resource_owner_secret to be constructed. The client_key and the client_secret are the keystring and shared secret given to you by etsy upon registering your app. The resource_owner_key and resource_owner_secret are the oauth_token and oauth_token_secret that must be retrieved by working through etsy's oauth workflow. See the "Obtaining Etsy OAuthCredentials" section to learn how to get the oauth_token and oauth_token_secret used by the EtsyOAuthClient.
+
 
 ## Obtaining Etsy OAuthCredentials
 
